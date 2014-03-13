@@ -1,0 +1,6 @@
+#include <verificacao.h>
+#include <stdlib.h>
+
+void* threadVerificaLinha(void *v){
+  char matriz = (char[9][9]) v;
+}
