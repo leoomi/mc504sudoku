@@ -14,6 +14,7 @@ void moduloDicas(){
     }     
   }   
   
+  checaDicasCelula(0, 0, matriz);
 }
 
 void checaDicasCelula(int x, int y, sudoku matriz[][9]){
@@ -21,19 +22,24 @@ void checaDicasCelula(int x, int y, sudoku matriz[][9]){
 
   //checa linhas
   for(i = 0; i < 9; i++){
-    if(matriz[x][i] != 0){
-      matriz[x][y].dicas[i - 1]++;
+    if(matriz[x][i].valor != 0){
+      matriz[x][y].dicas[ matriz[x][i].valor - 1 ]++;
     }
   }
 
     //checa linhas
   for(i = 0; i < 9; i++){
-    if(matriz[i][y] != 0){
-      matriz[x][y].dicas[i - 1]++;
+    if(matriz[i][y].valor != 0){
+      matriz[x][y].dicas[ matriz[i][y].valor - 1]++;
     }
   }
 
-  for(){
-    
+  for(i = (x/3)*3 ; i < (x/3)*3 + 3; i++){
+    for(j = (y/3)*3 ; j < (y/3) + 3; j++){
+      if(matriz[i][j].valor != 0){
+	matriz[x][y].dicas[ matriz[i][j].valor - 1]++;
+      }
+    }
   }
+
 }
