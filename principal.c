@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-  
+  int temp;
   int i, j;
   int matriz[9][9];
 
@@ -20,7 +20,7 @@ int main(){
   } 
   */
 
-  threadVerificaLinha((void *)matriz);
+  threadVerificaQuadrados((void *)matriz);
 
 
   return 0;
