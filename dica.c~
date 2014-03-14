@@ -1,0 +1,23 @@
+#include "dica.h"
+#include <pthread.h>
+#include <stdio.h>
+
+void moduloDicas(){
+  printf("Entre com o sudoku para completar dicas:\n");
+  
+  dica matriz[9][9];
+  int i, j;
+
+  for(i = 0; i < 9; i++){
+    for(j = 0; j < 9; j++){
+      scanf("%d", &matriz[i][j].valor);
+    }     
+  }   
+
+  for(i = 0; i < 9; i++){
+    for(j = 0; j < 9; j++){
+      printf("%d ", matriz[i][j].valor);
+    }     
+    printf("\n");
+  } 
+}

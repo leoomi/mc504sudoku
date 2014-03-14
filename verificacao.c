@@ -1,6 +1,6 @@
 #include "verificacao.h"
+#include <pthread.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 void* threadVerificaLinhas(void *v){
   int *matriz = (int*)v;
@@ -29,6 +29,8 @@ void* threadVerificaLinhas(void *v){
       }
     }
   }
+
+  return NULL;
 }
 
 void* threadVerificaColunas(void *v){
@@ -58,6 +60,8 @@ void* threadVerificaColunas(void *v){
       }
     }
   }
+  
+  return NULL;
 }
 
 void* threadVerificaQuadrados(void *v){
@@ -87,4 +91,28 @@ void* threadVerificaQuadrados(void *v){
     }
   }
   
+  return NULL;
+}
+
+void moduloVerificacao(){
+  printf("Entre com o sudoku para verificacao:\n");
+  
+  int matriz[9][9];
+  int i, j;
+
+  for(i = 0; i < 9; i++){
+    for(j = 0; j < 9; j++){
+      scanf("%d", &matriz[i][j]);
+    }     
+  }   
+
+  pthread_t threads[3];
+  
+  pthread_create(&threads[0], NULL, threadVerificaLinhas, (void *)matriz);
+  pthread_create(&threads[1], NULL, threadVerificaColunas, (void *)matriz);
+  pthread_create(&threads[2], NULL, threadVerificaQuadrados, (void *)matriz);
+
+  for(i = 0; i < 3; i++){
+    pthread_join(threads[i], NULL);
+  }
 }
