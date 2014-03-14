@@ -1,1 +1,3 @@
-void verificarColuna(int **matriz);
+void* verificarLinhas(void *v);
+void* verificarColunas(void *v);
+

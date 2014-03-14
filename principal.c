@@ -3,11 +3,11 @@
 int main(){
   
   int i, j;
-  char matriz[9][9];
+  int matriz[9][9];
 
   for(i = 0; i < 9; i++){
     for(j = 0; j < 9; j++){
-      scanf("%c", &matriz[i][j]);
+      scanf("%d", &matriz[i][j]);
     }     
   }   
   
@@ -20,8 +20,8 @@ int main(){
   } 
   */
 
-  threadVerificaLinha((void *)matriz
-);
+  threadVerificaLinha((void *)matriz);
+
 
   return 0;
 }
