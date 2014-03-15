@@ -3,12 +3,6 @@ typedef struct{
   int dicas[9];
 } sudoku;
 
-typedef struct{
-  int x;
-  int y;
-  sudoku *matriz;
- } argumento;
-
 void moduloDicas();
 void preencheDicas(sudoku matriz[][9]);
 void checaDicasCelula(int x, int y, sudoku matriz[][9]);
