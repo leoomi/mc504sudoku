@@ -1,2 +1,0 @@
-sudoku: principal.c verificacao.c verificacao.h
-	gcc principal.c verificacao.c -o sudoku
