@@ -14,3 +14,6 @@
 2. Módulo de dicas
 	O módulo de verificacação percorre todos as células do sudoku a serem verificadas e para cada uma delas, checa os possíveis números a serem colocados no estágio inicial do sudoku. Para cada célula são utilizadas 3 threads, sendo que uma percorre a linha, outra a coluna e por último o quadrado, contando a ocorrência de todos números. Caso não haja nenhuma ocorrência de algum número tanto na linha, como na coluna e no quadrado, este número é considerado uma possível entrada para aquela célula.
 	Esta estratégia é eficiente para checagem de cada célula, mas tem sua deficiência no fato de ser necessário percorrer o sudoku de célula por célula para a verificação das dicas.
+
+3.Módulo de solução
+	O módulo de solução executa um algoritmo de backtracking para resolver o sudoku. Como esse tipo de algoritmo não é totalmente compatível com multithreads sem perda de eficiência (muitas cópias de matrizes teriam que ser feitas) aplicamos o multithreading apenas para a decisão inicial: foram criadas 9 threads, que iniciam o trabalho a partir do primeiro 0 encontrado na matriz de entrada. Cada thread inicia o algoritmo com um valor diferente (de 1 a 9) e somente uma delas consegue solucionar o sudoku.
