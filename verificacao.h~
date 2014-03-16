@@ -1,6 +1,0 @@
-void verificarColuna(int **matriz);
-void verificarLinha();
-void verificarQuadrado();
-void verificarSudoku();
-
-
