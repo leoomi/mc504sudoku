@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "verificacao.h"
 #include "dica.h"
+#include "completar.c"
 
 int main(){
   /*
@@ -33,5 +34,7 @@ int main(){
     moduloVerificacao();
   else if(escolha == 2)
     moduloDicas();
+  else if(escolha == 3)
+    moduloSolucao();
   return 0;
 }

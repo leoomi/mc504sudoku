@@ -1,13 +1,16 @@
 typedef struct{
   int valor;
   int dicas[9];
-} sudoku;
+}sudoku;
 
 typedef struct{
   int x;
   int y;
+  int inicio;
+  int fim;
+  int retorno;
   sudoku *matriz;
- } argumento;
+ }argumento;
 
 void moduloDicas();
 void preencheDicas(sudoku matriz[][9]);
