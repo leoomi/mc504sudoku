@@ -1,0 +1,16 @@
+#########################################
+#              Instruções               #
+#########################################
+
+	Para utilizar os módulos pedidos no projeto, basta executar o programa "sudoku". O programa dá instruções claras e simples para a escolha dos módulos. Para os módulos de dica e solução, para a entrada do sudoku, o caracter '0' deve ser usado para representar a célula a ser verificada ou não preenchida.
+
+#########################################
+#              Explicações              #
+#########################################
+
+1. Módulo de verificação
+	Para o módulo de verificação a estratégia multithread adotada foi a utilização de 3 threads, cada uma com sua função específica. Cada uma das threads é responsável pela verificação de mais de duas ocorrências de um dado número. A diferença é que uma é responsável pela verificação das linhas, a segunda das colunas e a terceira nos quadrados. O ponto forte desta estratégia é sua simplicidade, eficiência e sua capacidade de encontrar e dizer todos os erros.
+
+2. Módulo de dicas
+	O módulo de verificacação percorre todos as células do sudoku a serem verificadas e para cada uma delas, checa os possíveis números a serem colocados no estágio inicial do sudoku. Para cada célula são utilizadas 3 threads, sendo que uma percorre a linha, outra a coluna e por último o quadrado, contando a ocorrência de todos números. Caso não haja nenhuma ocorrência de algum número tanto na linha, como na coluna e no quadrado, este número é considerado uma possível entrada para aquela célula.
+	Esta estratégia é eficiente para checagem de cada célula, mas tem sua deficiência no fato de ser necessário percorrer o sudoku de célula por célula para a verificação das dicas.
